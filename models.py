@@ -12,6 +12,10 @@ class Models():
         else:
             return self.df.merge(df, on=on, how=how)
 
+    def save(self, index:bool = False):
+        self.df.to_csv(self.filepath, encoding='utf-8', index=index)
+        return True
+
 class Circuits(Models):
     def __init__(self, filepath:str = './database/circuits.csv'):
         self.filepath = filepath
@@ -91,6 +95,7 @@ if __name__ == '__main__':
 
     cr.join(contructors.df, on='constructorId')
     print(cr.df.head())
+    print(cr.save())
 
     d_standings = Driver_Standings()
     drivers = Drivers()
