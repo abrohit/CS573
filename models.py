@@ -101,7 +101,7 @@ if __name__ == '__main__':
     drivers = Drivers()
 
     lt = Lap_Times()
-    pt = Pit_Stops()
+    ps = Pit_Stops()
 
     qualifying = Qualifying()
 
